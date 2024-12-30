@@ -1,0 +1,46 @@
+.right-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: white;
+    height: 100%;
+    width: 300px;
+    padding: 50px 20px 30px;
+    border-left: 1px solid #f1f1f1;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    // close
+    right: -300px;
+    opacity: 0.5;
+    .product, .orgnization{
+        height: calc(100% - 50px);
+    }
+    &.open{
+        right:0;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+    }
+    h4 {
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e1e3ea;
+    }
+    .animate-labels-form {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    span.close-right-sidebar {
+        position: absolute;
+        top: 5px;
+        right: 26px;
+        font-size: 29px;
+        cursor: pointer;
+        color: gray;
+        &:hover {
+            color: #111;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+<main class="auth-pages">
+    <div class="card">
+        <div class="card-title">
+            <h4>Email Verification</h4>
+            <p>Enter 4 Digits code we sent on your email</p>
+        </div>
+        <div class="card-body">
+            <form class="animate-labels-form">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control"  placeholder=" " />
+                    <label  class="form-label">Verification Code</label>
+                    <div class="error hide">
+                       Email does not match
+                    </div>
+                </div>
+                <div class="login-links mb-4">
+                    <a routerLink="/login">Didn't recived code?</a>
+                </div>
+                <div class="d-grid">
+                    <button routerLink="/create-new-password" type="submit" class="btn btn-primary justify-content-center">Send Code</button>
+                </div>
+               
+            </form>
+        </div>
+    </div>
+</main>

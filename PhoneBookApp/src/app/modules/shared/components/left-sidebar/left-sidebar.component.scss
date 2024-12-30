@@ -1,0 +1,174 @@
+@import '../../../../../styles/variables';
+
+a.logo {
+    display: inline-block;
+    margin: 0 auto;
+    img {
+      max-width: 90px;
+    }
+  }
+  ul.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    a {
+      width: 100%;
+      position: relative;
+      margin-bottom: 3px;
+      // padding:0;
+      &.btn-toggle {
+        &::before {
+          width: 1.25em;
+          line-height: 0;
+          font-family: "Font Awesome 5 Pro";
+          font-weight: 300;
+          content: "\f107";
+          // color: #355caa;
+          transform-origin: 0.5em 50%;
+          position: absolute;
+          right: 0;
+          transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+          transition: all 0.3s ease;
+        }
+        &[aria-expanded="true"]::before {
+          // right: 6px;
+          // color:#fff;
+          transition: all 0.3s ease;
+          transform: rotate(-180deg);
+          -webkit-transform: rotate(-180deg);
+          -moz-transform: rotate(-180deg);
+          -ms-transform: rotate(-180deg);
+          -o-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+          transform-origin: 3px 50%;
+        }
+      }
+    }
+    li li {
+      padding-left: 19px;
+      a {
+        font-size: 13px;
+        color: #4a4a4a;
+        color: #7e8299;
+        &:hover,
+        &.active,
+        &:focus {
+          border-color: #e4e4e4;
+          outline: none;
+          box-shadow: none;
+          background: $primary;
+          color: #fff;
+        }
+        i {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  .user-link {
+    margin-top: auto;
+  }
+  .adminDropdown {
+    margin-top: auto;
+    border-radius: 0;
+    padding: 0 1rem;
+    > a {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      padding-left: 15px;
+      color: #111;
+      &:after {
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 400;
+        content: "\f106";
+        border: 0;
+        position: relative;
+        top: -8px;
+        margin-left: 12px;
+        font-size: 14px;
+        color: #111;
+
+        transform-origin: 0.5em 50%;
+        right: 0;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        transition: all 0.3s ease;
+      }
+      &.show {
+        color: $primary;
+        &:after {
+          transition: all 0.3s ease;
+          transform: rotate(-180deg);
+          -webkit-transform: rotate(-180deg);
+          -moz-transform: rotate(-180deg);
+          -ms-transform: rotate(-180deg);
+          -o-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+          transform-origin: 3px 50%;
+        }
+      }
+      i{
+        font-size: 35px;
+        color:$primary;
+      }
+      img {
+        width: 35px;
+        height: 35px;
+      }
+      > div {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        span {
+          &.user-name {
+            font-weight: 600;
+          }
+
+          &.user-role {
+            font-size: 13px;
+            color: #828299;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    .dropdown-menu {
+      padding-top: 0;
+      padding-bottom: 0;
+      border-color: #d9d9d9;
+      li {
+        a {
+          width: 100%;
+          padding: 5px 15px;
+          font-size: 14px;
+          color: #111;
+          display: inline-flex;
+          align-items: center;
+          border-bottom: 1px solid #d9d9d9;
+          &:hover,
+          &:focus,
+          &.active {
+            color: $primary;
+          }
+          span {
+            margin-left: 8px;
+          }
+        }
+        &:last-child {
+          a {
+            border: 0;
+          }
+        }
+      }
+    }
+  }

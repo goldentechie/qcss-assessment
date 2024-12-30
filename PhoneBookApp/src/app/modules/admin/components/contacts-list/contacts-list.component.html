@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="card parent">
+      <div class="card-header">
+        <h4>Contacts List</h4>
+        <div class="card-actions">
+          <button (click)="openRightSidebar()" class="btn btn-primary"><i class="fal fa-plus"></i> Add</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <!-- AG Grid Angular Component -->
+        <ag-grid-angular
+          style="width: 100%; height: 500px"
+          class="ag-theme-alpine"
+          [rowData]="rowData$"
+          [cacheQuickFilter]="true"
+          [columnDefs]="columnDefs"
+          [defaultColDef]="defaultColDef"
+          [animateRows]="true"
+          [paginationPageSize]="paginationPageSize"
+          [pagination]="true"
+          (gridReady)="onGridReady($event)"
+        >
+        </ag-grid-angular>
+    </div>
+  </div>
+</div>
+<contact-popup (updateEvent)="popupUpdate($event)" ></contact-popup>
+<delete-confirmation (confirmationResult)="onConfirmation($event)" heading="Delete Confirmation" message="This contact will be removed from the system." confirmButton="Delete" cancelButton="Cancel" ></delete-confirmation>

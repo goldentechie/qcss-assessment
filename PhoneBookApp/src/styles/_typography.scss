@@ -1,0 +1,18 @@
+body{
+    font-family: $fontMain;
+    font-size: 14px;
+    font-weight: normal;
+}
+a {
+    color: $primary;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $primaryDark;
+    }
+}
+h4 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+}

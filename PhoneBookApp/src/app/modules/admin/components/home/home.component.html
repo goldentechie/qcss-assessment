@@ -1,0 +1,58 @@
+<main>
+    <div class="left-sidebar" app-left-sidebar></div>
+    <div class="main-container">
+        <app-main-navigation></app-main-navigation>
+        <section class="main-section">
+            <router-outlet></router-outlet>
+        </section>
+    </div>
+</main>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0 pb-0">
+                <h5 class="modal-title fw-bold fs-6" id="staticBackdropLabel"><i class="far fa-lock-alt me-1"></i>
+                    Restrict Access</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="m-0 fs-6">The user will no longer have access to the file system.<br />
+                    Are you sure to proceed?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="changeAssignment" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0 pb-0">
+                <h5 class="modal-title fw-bold fs-6" id="changeAssignmentLabel"><i class="far fa-user-edit"></i> Change
+                    Assignment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="animate-labels-form mt-4">
+                    <ng-select class="ng-select-style my-2" [items]="assignees" [(ngModel)]="selectedAssignee" bindLabel="name"
+                        bindValue="name" [clearable]="false">
+                        <ng-template ng-label-tmp let-item="item">
+                            {{item.name}}
+                        </ng-template>
+                    </ng-select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-sm" aria-label="">
+    <div class="container-fluid">
+      <a *ngIf="userRole === 'Lender' || userRole === 'Provider'"  class="company-name" [routerLink]="null"
+        ><i class="fas fa-warehouse-alt"></i>
+        <span class="">{{userOrganization}}</span></a
+      >
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarsExample03"
+      >
+        
+      </div>
+    </div>
+  </nav>
+  

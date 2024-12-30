@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="card parent">
+        <div class="card-header">
+            <h4>{{userId ? "Update System User" : "Add System User"}}</h4>
+            <div class="card-actions">
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <form class="animate-labels-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder=" " formControlName="email" [readOnly]="userId || isLoading" />
+                                    <label for="email" class="form-label">Email address</label>
+                                    <div *ngIf="(registerForm.controls['email'].dirty || registerForm.controls['email'].touched)">
+                                        <div class="error" *ngIf="registerForm.controls['email'].errors?.['email']">
+                                            Enter valid email address
+                                        </div>
+                                        <div class="error" *ngIf="registerForm.controls['email'].errors?.['required']">
+                                            Enter email address
+                                        </div>
+                                        <div class="error" *ngIf="registerForm.controls['email'].errors?.['entityExists']">
+                                            User already exists with this email
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder=" " formControlName="firstName" [readOnly]="isLoading" />
+                                    <label class="form-label">First name</label>
+                                    <div *ngIf="(registerForm.controls['firstName'].dirty || registerForm.controls['firstName'].touched)">
+                                        <div class="error" *ngIf="registerForm.controls['firstName'].errors?.['required']">
+                                            Enter First Name
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder=" " formControlName="lastName" [readOnly]="isLoading" />
+                                    <label class="form-label">Last name</label>
+                                    <div *ngIf="(registerForm.controls['lastName'].dirty || registerForm.controls['lastName'].touched)">
+                                        <div class="error" *ngIf="registerForm.controls['lastName'].errors?.['required']">
+                                            Enter Last Name
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control invalid" placeholder=" " formControlName="phoneNumber" [readOnly]="isLoading" />
+                                    <label class="form-label">Phone</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-end mt-3">
+                            <button type="submit" class="btn btn-primary"[disabled]="registerForm.invalid ||isLoading" ><i *ngIf="isLoading" i class="fa fa-spinner fa-spin"></i> {{isLoading ? "Loading..." : (userId? "Update" : "Add")}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

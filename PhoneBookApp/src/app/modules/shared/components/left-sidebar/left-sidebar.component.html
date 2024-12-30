@@ -1,0 +1,48 @@
+<a routerLink="/admin/contacts" class="logo">
+  <h5>Contact Book</h5>
+  <br />
+</a>
+<div class="sidebar-menu">
+  <hr />
+  <ul *ngIf="userRole === 'Admin' || userRole === 'SystemUser' " class="menu-list">
+    <li *ngIf="userRole === 'Admin'">
+        <a routerLink="/admin/user-list" [routerLinkActive]="'active'" class="nav-link"
+          [routerLinkActive]="'active'">
+          <i class="fal fa-address-book"></i> <span>List</span>
+        </a>
+    </li>
+    <li>
+        <a routerLink="/admin/contacts" class="nav-link" [routerLinkActive]="'active'">
+          <i class="fal fa-layer-group"></i> <span>Contacts</span>
+        </a>
+    </li>
+  </ul>
+</div>
+<div class="user-link">
+  <hr />
+  <div class="btn-group dropup adminDropdown">
+    <a href="javascript;" type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      <!-- <img src="../../../../assets/images/users/user1.png" alt="" /> -->
+      <i class="fas fa-user-circle"></i>
+      <div>
+        <span class="user-name">{{userName}}</span>
+        <span class="user-role">{{userRole}}</span>
+      </div>
+    </a>
+    <div class="dropdown-menu">
+      <li>
+        <a [routerLink]="'/create-new-password'">
+          <i class="fal fa-user-alt"></i>
+          <span>Update Password</span>
+        </a>
+      </li>
+      <li >
+        <a [routerLink]="null" (click)="onLogout()">
+          <i class="fal fa-sign-out"></i>
+          <span>Logout</span>
+        </a>
+      </li>
+    </div>
+  </div>
+</div>

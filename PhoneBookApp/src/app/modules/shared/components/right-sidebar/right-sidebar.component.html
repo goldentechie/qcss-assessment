@@ -1,0 +1,46 @@
+<div class="right-sidebar">
+    <span class="close-right-sidebar" (click)="closeRightSidebar($event)"><i class="fal fa-times"></i></span>
+    <div class="product" style="display: none;">
+        <h4>Add Product</h4>
+        
+        <form class="animate-labels-form">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder=" ">
+                <label>Product Name</label>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder=" ">
+                <label>Product Type</label>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" type="text" placeholder=" "></textarea>
+                <label>Product Description</label>
+            </div>
+            <div class="text-end mt-auto">
+                <button class="btn btn-outline-danger" (click)="closeRightSidebar($event)">
+                    Cancel
+                </button>
+                <button class="btn btn-primary ms-3"> Save</button>
+            </div>
+        </form>
+    </div>
+    <div class="orgnization" style="display: none;">
+        <h4>Add Orgnization</h4>
+        <form class="animate-labels-form">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder=" ">
+                <label>Name</label>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" type="text" placeholder=" "></textarea>
+                <label>Description</label>
+            </div>
+            <div class="text-end mt-auto">
+                <button class="btn btn-outline-danger" (click)="closeRightSidebar($event)">
+                    Cancel
+                </button>
+                <button class="btn btn-primary ms-3"> Save</button>
+            </div>
+        </form>
+    </div>
+</div>

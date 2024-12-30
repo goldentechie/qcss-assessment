@@ -1,0 +1,49 @@
+<main class="auth-pages">
+    <div class="card">
+        <div class="card-title">
+            <h4>Hi, Welcome Back</h4>
+            <p>Enter your credentails to continue</p>
+        </div>
+        <div class="card-body">
+            <form class="animate-labels-form" [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="" formControlName="username"  [readOnly]="isLoading" />
+                    <label class="form-label">Username</label>
+                    <div *ngIf="(loginForm.controls['username'].dirty || loginForm.controls['username'].touched)">
+                        <div class="error" *ngIf="loginForm.controls['username'].errors?.['email']">
+                            Enter valid email address
+                        </div>
+                        <div class="error" *ngIf="loginForm.controls['username'].errors?.['required']">
+                            Enter email address
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" class="form-control" placeholder="" formControlName="password"  [readOnly]="isLoading" >
+                    <label class="form-label">Password</label>
+                    <div class="error" *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+                        Enter password
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <div class="form-group checkbox-radio not-animate mb-3">
+                        <input type="checkbox" checked id="checkbox-18" />
+                        <label for="checkbox-18"></label>
+                        <label for="checkbox-18">Remember me</label>
+                    </div>
+                    <a routerLink="/forgot-password">Forgot password?</a>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" [disabled]="loginForm.invalid || isLoading"
+                        class="btn btn-primary justify-content-center"><i *ngIf="isLoading" i class="fa fa-spinner fa-spin"></i> {{isLoading ? "Signing you in..." : "Login "}}</button>
+                </div>
+
+                <div class="error" *ngIf="loginRepsonse && loginRepsonse.isError" >
+                    {{loginRepsonse.message}}
+                </div>
+
+            </form>
+        </div>
+    </div>
+</main>

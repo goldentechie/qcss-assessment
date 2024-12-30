@@ -1,0 +1,24 @@
+@import "../../../styles/login";
+.not-found {
+    text-align: center;
+    padding: 30px 0;
+    h4 {
+        font-size: 91px;
+        font-weight: bolder;
+        color: #0e409c;
+        letter-spacing: -5px;
+        text-shadow: 4px 4px 5px #dbdbdb;
+        display: inline-flex;
+        align-items: center;
+        i {
+            font-size: 68px;
+            margin-left: 14px;
+        }
+    }
+    h6 {
+        font-size: 22px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #636363;
+    }
+}
